@@ -70,7 +70,16 @@ done
 
 echo "WA Operator is READY"
 sleep 60
-INSTANCE_STATUS=$(kubectl get WatsonAssistant "${INSTANCE_NAME}" -n "${CPD_NAMESPACE}" -o jsonpath='{.status.watsonAssistantStatus} {"\n"}')
+INSTANCE_STATUS=""
+
+while [ true ]; do
+  INSTANCE_STATUS=$(kubectl get WatsonAssistant wa -n "${CPD_NAMESPACE}" -o jsonpath='{.status.watsonAssistantStatus} {"\n"}')
+  echo "Waiting for instance "${INSTANCE_NAME}" to be ready. Current status : "${INSTANCE_STATUS}""
+  if [ $INSTANCE_STATUS == "Completed" ]; then
+    break
+  fi
+  sleep 60
+done
 
 echo "Watson Assitant WatsonAssistant/"${INSTANCE_NAME}" is "${INSTANCE_STATUS}""
 
