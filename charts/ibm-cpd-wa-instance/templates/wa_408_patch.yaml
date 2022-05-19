@@ -2,6 +2,9 @@ apiVersion: assistant.watson.ibm.com/v1
 kind: TemporaryPatch
 metadata:
   name: wa-add-clu-mm-balanced-header
+  namespace: {{ .Values.cpd_namespace }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "-2"
 spec:
   apiVersion: assistant.watson.ibm.com/v1
   kind: WatsonAssistantClu

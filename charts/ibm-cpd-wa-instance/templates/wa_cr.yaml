@@ -9,6 +9,7 @@ metadata:
     oppy.ibm.com/log-filters: ""
     oppy.ibm.com/log-thread-id: "false"
     oppy.ibm.com/log-json: "false"
+    argocd.argoproj.io/sync-wave: "-4"
   labels:
     app.kubernetes.io/managed-by: "Ansible"
     app.kubernetes.io/name: "watson-assistant"
@@ -94,5 +95,5 @@ spec:
   #- cs
   license:
     accept: true
-  size: medium     # Options are small, medium, and large
+  size: small     # Options are small, medium, and large
   version: {{ .Values.version }}

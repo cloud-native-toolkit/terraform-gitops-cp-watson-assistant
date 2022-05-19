@@ -2,7 +2,6 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-syncWave: "-5"
+name: wa
 cpd_namespace: gitops-cp4d-instance
 version: "4.0.8"
-patchSyncWave: "-2"

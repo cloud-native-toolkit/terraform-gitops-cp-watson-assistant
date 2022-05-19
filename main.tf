@@ -11,14 +11,13 @@ locals {
   service_url   = "http://${local.name}.${var.namespace}"
 
   operandrequest_content = {
-    syncWave = "-10"   
-    common_services_namespace = var.common_services_namespace        
+    common_services_namespace = var.common_services_namespace
+    cpd_namespace = var.cpd_namespace      
   } 
   
   subscription_content = {
     name = "ibm-watson-assistant-operator-subscription"
     operator_namespace = var.operator_namespace
-    syncWave = "-8"
     spec = {
       channel = "v4.0"
       installPlanApproval = "Automatic"
@@ -31,9 +30,7 @@ locals {
   instance_content = {
     name = "wa"
     version = "4.0.8"
-    cpd_namespace = var.cpd_namespace
-    syncWave = "-5"
-    patchSyncWave = "-2"           
+    cpd_namespace = var.cpd_namespace         
   }
 
   layer = "services"

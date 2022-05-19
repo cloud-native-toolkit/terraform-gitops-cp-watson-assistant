@@ -3,8 +3,7 @@
 # Declare variables to be passed into your templates.
 
   name: ibm-watson-assistant-operator-subscription
-  operator_namespace: cpd-operators  
-  syncWave: "-8"
+  operator_namespace: cpd-operators
   spec:
     channel: v4.0
     name: ibm-watson-assistant-operator
