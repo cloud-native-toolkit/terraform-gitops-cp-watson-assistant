@@ -21,7 +21,7 @@ spec:
   cluster:
     dockerRegistryPrefix: ""
     imagePullSecrets: []
-    storageClassName: portworx-watson-assistant-sc     # If you use a different storage class, replace it with the appropriate storage class
+    storageClassName: {{ .Values.storage_class }}      # If you use a different storage class, replace it with the appropriate storage class
     type: private
     name: prod     # Do not change this value 
   cpd:
@@ -57,10 +57,10 @@ spec:
         storageSize: 1Gi
     modelTrain:
       postgres:
-        storageClassName: "portworx-watson-assistant-sc"
+        storageClassName: {{ .Values.storage_class }} 
         storageSize: "10Gi"
       rabbitmq:
-        storageClassName: "portworx-watson-assistant-sc"
+        storageClassName: {{ .Values.storage_class }} 
         storageSize: ""
     postgres:
       backupStorageClassName: ""

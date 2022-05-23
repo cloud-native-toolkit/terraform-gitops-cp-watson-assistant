@@ -104,3 +104,51 @@ variable "cpd_namespace" {
   description = "CPD namespace"
   default = "gitops-cp4d-instance"
 }
+
+variable "operator_namespace" {
+  type        = string
+  description = "Namespace for cpd commmon services"
+  default = "cpd-operators"
+}
+
+variable "cpd_namespace" {
+  type        = string
+  description = "CPD namespace"
+  default = "gitops-cp4d-instance"
+}
+
+variable "operator_channel" {
+  type        = string
+  description = "operator channel"
+  default     = "v4.0"
+}
+
+variable "instance_version" {
+  type        = string
+  description = "Instance version"
+  default     = "4.0.8"
+}
+
+variable "license" {
+  type        = string
+  description = "License type"
+  default     = "Enterprise"
+}
+
+variable "storage_class" {
+  type        = string
+  description = "Storage class for the instance"
+  default     = "portworx-watson-assistant-sc"
+}
+
+variable "storage_vendor" {
+  type        = string
+  description = "Storage vendor for the instance"
+  default     = "portworx"
+}
+
+variable "install_plan" {
+  type        = string
+  description = "install plan"
+  default     = "Automatic"
+}

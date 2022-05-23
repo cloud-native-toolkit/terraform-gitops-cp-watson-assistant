@@ -19,8 +19,8 @@ locals {
     name = "ibm-watson-assistant-operator-subscription"
     operator_namespace = var.operator_namespace
     spec = {
-      channel = "v4.0"
-      installPlanApproval = "Automatic"
+      channel = var.operator_channel
+      installPlanApproval = var.install_plan
       name = "ibm-watson-assistant-operator"
       source = "ibm-operator-catalog"
       sourceNamespace = "openshift-marketplace"        
@@ -29,8 +29,9 @@ locals {
   
   instance_content = {
     name = "wa"
-    version = "4.0.8"
-    cpd_namespace = var.cpd_namespace         
+    version = var.instance_version
+    cpd_namespace = var.cpd_namespace  
+    storage_class = var.storage_class       
   }
 
   layer = "services"
