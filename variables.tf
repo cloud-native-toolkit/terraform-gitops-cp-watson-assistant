@@ -92,22 +92,9 @@ variable "common_services_namespace" {
   default = "ibm-common-services"
 }
 
-
 variable "operator_namespace" {
   type        = string
-  description = "Namespace for cpd commmon services"
-  default = "cpd-operators"
-}
-
-variable "cpd_namespace" {
-  type        = string
-  description = "CPD namespace"
-  default = "gitops-cp4d-instance"
-}
-
-variable "operator_namespace" {
-  type        = string
-  description = "Namespace for cpd commmon services"
+  description = "Namespace for cpd operators"
   default = "cpd-operators"
 }
 
@@ -139,12 +126,6 @@ variable "storage_class" {
   type        = string
   description = "Storage class for the instance"
   default     = "portworx-watson-assistant-sc"
-}
-
-variable "storage_vendor" {
-  type        = string
-  description = "Storage vendor for the instance"
-  default     = "portworx"
 }
 
 variable "install_plan" {
