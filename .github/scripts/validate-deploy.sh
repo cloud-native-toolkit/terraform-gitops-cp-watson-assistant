@@ -57,7 +57,7 @@ fi
 echo "CP4D Operators namespace : "${OPERATOR_NAMESPACE}""
 echo "CP4D namespace : "${CPD_NAMESPACE}""
 
-sleep 30
+sleep 60
 
 CSV=$(kubectl get sub -n "${OPERATOR_NAMESPACE}" "${SUBSCRIPTION_NAME}" -o jsonpath='{.status.installedCSV} {"\n"}')
 echo "Found CSV : "${CSV}""
