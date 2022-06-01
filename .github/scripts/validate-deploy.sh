@@ -105,6 +105,5 @@ kubectl get pvc -oname | grep -i "wa-" | xargs kubectl delete -n "${CPD_NAMESPAC
 kubectl patch temporarypatch wa-add-clu-mm-balanced-header -n "${CPD_NAMESPACE}" --type=merge -p '{"metadata": {"finalizers":null}}'
 
 
-
 cd ..
 rm -rf .testrepo
