@@ -1,4 +1,4 @@
-# Install Watson-Studio Service on Cloud Pak for Data
+# Install Watson Assistant Service on Cloud Pak for Data
 
 Module to install Watson Assistant service on Cloud Pak for Data. As per instructions mentioned in 
 https://www.ibm.com/docs/en/cloud-paks/cp-data/4.0?topic=services-watson-assistant
