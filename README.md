@@ -40,13 +40,14 @@ This module makes use of the output from other modules:
 module "cp-watson-assistant" {
   source = "github.com/cloud-native-toolkit/terraform-gitops-cp-watson-assistant.git"
 
-  cluster_config_file = module.dev_cluster.config_file_path
-  cluster_type        = module.dev_cluster.type
-  app_namespace       = module.dev_cluster_namespaces.tools_namespace_name
-  ingress_subdomain   = module.dev_cluster.ingress_hostname
-  olm_namespace       = module.dev_software_olm.olm_namespace
-  operator_namespace  = module.dev_software_olm.target_namespace
-  name                = "argocd"
+  gitops_config = module.gitops.gitops_config
+  git_credentials = module.gitops.git_credentials
+  server_name = module.gitops.server_name
+  namespace = module.gitops_namespace.name
+  kubeseal_cert = module.gitops.sealed_secrets_cert
+  operator_namespace= module.gitops_cp4d_operator.namespace
+  cpd_namespace = module.cp4d-instance.namespace
+}
 }
 ```
 
