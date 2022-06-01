@@ -6,3 +6,4 @@ name: wa
 cpd_namespace: gitops-cp4d-instance
 version: "4.0.8"
 storage_class: portworx-watson-assistant-sc
+syncWave: "-3"

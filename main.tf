@@ -18,6 +18,7 @@ locals {
   subscription_content = {
     name = "ibm-watson-assistant-operator-subscription"
     operator_namespace = var.operator_namespace
+    syncwave = var.sub_syncwave
     spec = {
       channel = var.operator_channel
       installPlanApproval = var.install_plan
@@ -31,7 +32,8 @@ locals {
     name = "wa"
     version = var.instance_version
     cpd_namespace = var.cpd_namespace  
-    storage_class = var.storage_class       
+    storage_class = var.storage_class
+    syncwave = var.inst_syncwave      
   }
 
   layer = "services"

@@ -4,6 +4,7 @@
 
   name: ibm-watson-assistant-operator-subscription
   operator_namespace: cpd-operators
+  syncWave: "-5"
   spec:
     channel: v4.0
     name: ibm-watson-assistant-operator

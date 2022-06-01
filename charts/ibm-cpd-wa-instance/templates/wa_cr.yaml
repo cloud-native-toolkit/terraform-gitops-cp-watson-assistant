@@ -9,7 +9,7 @@ metadata:
     oppy.ibm.com/log-filters: ""
     oppy.ibm.com/log-thread-id: "false"
     oppy.ibm.com/log-json: "false"
-    argocd.argoproj.io/sync-wave: "-4"
+    argocd.argoproj.io/sync-wave: {{ .Values.syncwave | default "-3" | quote }}
   labels:
     app.kubernetes.io/managed-by: "Ansible"
     app.kubernetes.io/name: "watson-assistant"
